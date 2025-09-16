@@ -106,7 +106,7 @@ body {
     cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
-    transition: background var(--transition), color var(--transition);
+    transition: all var(--transition);
     position: relative;
 }
 
