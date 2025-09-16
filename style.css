@@ -1,0 +1,226 @@
+/* Center all main titles */
+h1, h2 {
+    text-align: center;
+}
+:root {
+    --purple: #a259ff;
+    --purple-dark: #6c2eb6;
+    --purple-light: #d1b3ff;
+    --bg: #181024;
+    --bg-light: #24183a;
+    --text: #f3f0ff;
+    --card: #22153a;
+    --transition: 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background var(--transition);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 16px rgba(162,89,255,0.08);
+    z-index: 100;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.profile-squircle {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    border-radius: 30% / 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-right: 0.75rem;
+    box-shadow: 0 2px 8px rgba(162,89,255,0.15);
+    transition: box-shadow var(--transition);
+}
+
+.profile-squircle:hover {
+    box-shadow: 0 4px 16px rgba(162,89,255,0.25);
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 30% / 40%;
+    transition: none;
+}
+
+.profile-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--purple);
+    letter-spacing: 1px;
+    text-shadow: 0 1px 8px var(--purple-light);
+}
+
+.navbar-center {
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    transition: background var(--transition), color var(--transition);
+    position: relative;
+}
+
+.nav-btn.active, .nav-btn:hover {
+    background: var(--purple);
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 2px 12px rgba(162,89,255,0.18);
+}
+
+.icon-btn {
+    color: var(--purple);
+    font-size: 1.6rem;
+    margin-left: 1.2rem;
+    transition: color var(--transition), transform var(--transition);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.icon-btn:hover {
+    color: var(--purple-light);
+    transform: scale(1.2) rotate(-8deg);
+}
+
+main {
+    max-width: 900px;
+    margin: 2.5rem auto 0 auto;
+    padding: 1rem;
+    animation: fadeInUp 1.2s;
+    height: calc(100vh - 72px); /* Adjust for navbar height, tweak as needed */
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.page {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.page.active {
+    display: block;
+    opacity: 1;
+    animation: fadeInPage 0.6s;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: var(--card);
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 16px rgba(162,89,255,0.10);
+    padding: 1.5rem;
+    transition: box-shadow var(--transition), transform var(--transition);
+    animation: fadeInUp 1.2s;
+    position: relative;
+}
+
+.project-card:hover {
+    box-shadow: 0 6px 32px rgba(162,89,255,0.18);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.project-card h2 {
+    color: var(--purple);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.tags {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: var(--purple);
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 6px rgba(162,89,255,0.12);
+    transition: background var(--transition), color var(--transition);
+    animation: fadeInTag 1.3s;
+}
+
+.tag:hover {
+    background: var(--purple-light);
+    color: var(--purple-dark);
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 0.5rem;
+        overflow-x: auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .navbar-center {
+        margin: 0.5rem 0;
+    }
+    main {
+        padding: 0.5rem;
+    }
+    .projects-grid {
+        gap: 1rem;
+    }
+}
