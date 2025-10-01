@@ -55,6 +55,7 @@ nav.navbar button {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   white-space: nowrap;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 nav.navbar button.active {
