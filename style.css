@@ -98,6 +98,11 @@ section[data-active="true"] {
 
 /* Mobile styles */
 @media (max-width: 600px) {
+  body {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
   .window {
     margin: 8px;
     padding: 16px 12px;
