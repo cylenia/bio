@@ -23,7 +23,7 @@
     </ul>
   </nav>
   <main class="main window">
-    <section id="home">
+    <section id="home" data-active="true">
       <h1>Home</h1>
       <p>
         Hello! I'm Cylenia.
@@ -32,7 +32,7 @@
 				Most of my work is pretty silly, but sometimes I make stuff that people might actually use!
       </p>
     </section>
-    <section id="skills" style="display:none">
+    <section id="skills" data-active="false">
       <h1>Skills</h1>
       <p>
         I use a variety of tools, but the ones I am most familiar with are frontend technologies
@@ -41,7 +41,7 @@
         use Rust in my projects.
       </p>
     </section>
-    <section id="interests" style="display:none">
+    <section id="interests" data-active="false">
       <h1>Interests</h1>
       <p>
         When I am not practicing my programming, I like reading fantasy novels, playing video games
@@ -49,7 +49,7 @@
         I also like to explore nature and go for walks in the forest.
       </p>
     </section>
-    <section id="contact" style="display:none">
+    <section id="contact" data-active="false">
       <h1>Contact</h1>
       <p>
         I'd love to hear from you! Feel free to reach out via email at me@cylenia.dev, or on Discord at "@cylenia."
@@ -60,19 +60,6 @@
   <footer class="footer window">
     <p>© 2025 Cylenia • Built with 💜</p>
   </footer>
-  <script>
-    const buttons = document.querySelectorAll('.navbar button');
-    const sections = document.querySelectorAll('main section');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        sections.forEach(sec => sec.style.display = 'none');
-        document.getElementById(btn.dataset.section).style.display = 'block';
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-    // Set first button to active so it is highlighted by default
-    buttons[0].classList.add('active');
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

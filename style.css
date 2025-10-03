@@ -82,6 +82,20 @@ h1 {
   margin-top: 0;
 }
 
+section {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  height: 0;
+  overflow: hidden;
+}
+
+section[data-active="true"] {
+  opacity: 1;
+  pointer-events: auto;
+  height: auto;
+}
+
 /* Mobile styles */
 @media (max-width: 600px) {
   .window {
