@@ -4,17 +4,30 @@ html, body {
   touch-action: none;
 }
 
+:root {
+  --bg: #111111;
+  --window-bg: #1e1e2e;
+  --accent: #cba6f7;
+  --accent-text: #181825;
+  --font: 'JetBrains Mono', monospace;
+  --btn-padding: 8px 16px;
+  --link-padding: 8px 12px;
+}
+
+/* use border-box everywhere to simplify sizing calculations */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
   display: flex;
   flex-direction: column;
-  background: #111111;
-  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg);
+  font-family: var(--font);
 }
 
 .window {
-  background: #1e1e2e;
-  border: solid 2px #cba6f7;
-  color: #cba6f7;
+  background: var(--window-bg);
+  border: solid 2px var(--accent);
+  color: var(--accent);
   margin: 16px;
   padding: 24px 16px;
 }
@@ -42,26 +55,35 @@ nav.navbar ul {
   justify-content: center;
 }
 
-nav.navbar li {
-  display: flex;
-}
+nav.navbar li { display: flex; }
 
-nav.navbar button {
+nav.navbar button,
+#links a {
   margin: 0;
-  padding: 8px 16px;
-  font-size: 14px;
-  color: #cba6f7;
+  color: var(--accent);
   background: transparent;
-  border: solid 2px #cba6f7;
+  border: 2px solid var(--accent);
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   white-space: nowrap;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font);
+  text-decoration: none;
 }
 
-nav.navbar button.active {
-  background: #cba6f7;
-  color: #181825;
+nav.navbar button {
+  padding: var(--btn-padding);
+  font-size: 14px;
+}
+
+#links a {
+  padding: var(--link-padding);
+  display: inline-block;
+}
+
+nav.navbar button.active,
+#links a.active {
+  background: var(--accent);
+  color: var(--accent-text);
 }
 
 main {
@@ -97,7 +119,38 @@ section[data-active="true"] {
   height: auto;
 }
 
-/* Mobile styles */
+#links ul {
+  list-style: none;
+  margin: 12px 0 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 8px;
+  align-items: start;
+  justify-content: start;
+}
+
+#links ul li {
+  width: 100%;
+}
+
+#links a {
+  box-sizing: border-box;
+  width: auto;
+}
+
+#links a:hover,
+#links a:focus {
+  background: #cba6f7;
+  color: #181825;
+  outline: none;
+}
+
+#links a:active {
+  transform: translateY(1px);
+}
+
+/* Mobile styles (overrides) */
 @media (max-width: 600px) {
   body {
     overflow: hidden;
@@ -134,5 +187,19 @@ section[data-active="true"] {
   p {
     font-size: 0.9rem;
     line-height: 1.5;
+  }
+
+  #links a {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+  }
+
+  #links ul {
+    grid-template-columns: 1fr;
+  }
+
+  .mobilehidden {
+    display: none;
   }
 }

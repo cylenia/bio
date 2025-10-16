@@ -37,3 +37,41 @@ if (buttons.length === 0 || sections.length === 0) {
     }
   });
 }
+
+// Equalize link widths in the Links section on desktop so all buttons match the widest one.
+function equalizeLinkWidths() {
+  const links = Array.from(document.querySelectorAll('#links a'));
+  if (links.length === 0) return;
+
+  // Reset any previously set inline widths to measure natural sizes
+  links.forEach(a => a.style.width = '');
+
+  const isDesktop = window.matchMedia('(min-width: 601px)').matches;
+  if (!isDesktop) {
+    // mobile: let CSS make them full-width
+    links.forEach(a => a.style.width = '');
+    return;
+  }
+
+  // measure widest
+  let max = 0;
+  links.forEach(a => {
+    const rect = a.getBoundingClientRect();
+    // include borders in calculation
+    const style = getComputedStyle(a);
+    const borderLeft = parseFloat(style.borderLeftWidth) || 0;
+    const borderRight = parseFloat(style.borderRightWidth) || 0;
+    const total = rect.width + borderLeft + borderRight;
+    if (total > max) max = total;
+  });
+
+  // set explicit width (px) so items in different columns match
+  links.forEach(a => a.style.width = Math.ceil(max) + 'px');
+}
+
+window.addEventListener('load', equalizeLinkWidths);
+window.addEventListener('resize', () => {
+  // debounce
+  clearTimeout(window.__equalizeTimeout);
+  window.__equalizeTimeout = setTimeout(equalizeLinkWidths, 100);
+});
