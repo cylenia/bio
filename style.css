@@ -104,6 +104,7 @@ section[data-active="true"] {
     position: fixed;
     width: 100%;
   }
+
   .window {
     margin: 8px;
     padding: 16px 12px;
@@ -121,7 +122,11 @@ section[data-active="true"] {
     padding: 6px 12px;
     font-size: 13px;
   }
-  
+
+  .nav-num {
+    display: none;
+  }
+
   h1 {
     font-size: 1.5rem;
   }
