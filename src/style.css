@@ -47,6 +47,7 @@ p {
 }
 
 .links > a {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: #d8bafa;
