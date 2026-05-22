@@ -49,6 +49,7 @@ p {
 .links > a {
   background-color: #d8bafa;
   height: 40px;
+  padding: 24px;
   font-size: 14px;
   border-radius: 100px;
   text-decoration: none;
