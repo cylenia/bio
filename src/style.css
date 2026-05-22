@@ -1,9 +1,9 @@
 body {
-  background-color: #1e1e2e;
+  background-color: #151218;
   margin: 0;
   padding: 1.5rem;
   font-family: monospace;
-  color: #cba6f7;
+  color: #d8bafa;
 }
 
 .container {
@@ -36,7 +36,6 @@ p {
 .links > a {
   padding: 1rem;
   font-size: 1rem;
-  border: 2px solid #cba6f7;
   border-radius: 1rem;
   text-decoration: none;
   transition: transform 0.15s ease, color 0.15s ease, background-color 0.15s ease;
@@ -45,12 +44,12 @@ p {
 .links > a:link,
 .links > a:visited,
 .links > a:active {
-  color: #cba6f7;
+  color: #d8bafa;
 }
 
 .links > a:hover {
-  color: #1e1e2e;
-  background-color: #cba6f7;
+  color: #151218;
+  background-color: #d8bafa;
   transform: translateY(-2px);
 }
 
