@@ -47,22 +47,21 @@ p {
 }
 
 .links > a {
-  padding: 1rem;
-  font-size: 1rem;
-  border-radius: 1rem;
+  background-color: #d8bafa;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 100px;
   text-decoration: none;
-  transition: transform 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  transition: transform 0.15s ease;
 }
 
 .links > a:link,
 .links > a:visited,
 .links > a:active {
-  color: #d8bafa;
+  color: #3c245a;
 }
 
 .links > a:hover {
-  color: #151218;
-  background-color: #d8bafa;
   transform: translateY(-2px);
 }
 
