@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="Cylenia's personal biography website.">
+  <title>Cylenia</title>
 
-    <!-- embeds on social media (discord!!!) -->
-    <meta property="og:title" content="Cylenia">
-    <meta property="og:description" content="Cylenia's personal biography website.">
-    <meta property="og:image" content="/src/preview.png">
-    <meta property="og:url" content="https://www.cylenia.dev">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- regular stuff -->
-    <link rel="stylesheet" href="/src/style.css">
-    <link rel="icon" href="/src/favicon.ico" type="image/x-icon">
-    <title>Cylenia</title>
-  </head>
-  <body>
-    <div class="container flex">
-      <img class="left" src="/src/pfp.webp">
-      <p class="right">
-        I'm Cylenia, and I am a fucking idiot.
-        I am an aunc, according to my siblings.
-        I watch Breaking Bad, it's really cool.
-        I like computers. They are fun.
-        I also like writing code, and making stuff look pretty.
-        I use GNU/Linux on my ThinkPad L390 Yoga.
-        I play Half-Life, Getting Over It, Rimworld and Minecraft with technical mods right now.
-      </p>
-    </div>
-    <div class="container">
-      <div class="links">
-        <a href="https://github.com/cylenia">Github</a>
+  <meta
+    name="description"
+    content="Cylenia's personal biography website."
+  >
+
+  <!-- Open Graph (for Discord)-->
+  <meta property="og:title" content="Cylenia">
+  <meta
+    property="og:description"
+    content="Cylenia's personal biography website."
+  >
+  <meta property="og:image" content="/src/preview.png">
+  <meta property="og:url" content="https://www.cylenia.dev">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="icon" href="/src/favicon.ico">
+</head>
+
+<body>
+  <main class="page">
+    <section class="card profile">
+      <img
+        class="profile-image"
+        src="/src/pfp.webp"
+        alt="Cylenia's profile picture"
+      >
+
+      <div class="profile-content">
+        <h1>Cylenia</h1>
+
+        <p>
+          I'm Cylenia, and I am a fucking idiot.
+        </p>
+
+        <p>
+          I am an aunc, according to my siblings.
+        </p>
+
+        <p>
+          I like computers, Linux, writing code,
+          and making things look pretty.
+        </p>
+
+        <p>
+          Right now I'm playing Half-Life,
+          Getting Over It, RimWorld,
+          and technical Minecraft mods.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <nav class="social-links">
+        <a href="https://github.com/cylenia">GitHub</a>
         <a href="https://discord.com/users/1105543904520044594">Discord</a>
         <a href="https://namemc.com/profile/Cylenia">Minecraft</a>
         <a href="https://steamcommunity.com/id/cylenia">Steam</a>
-        <a href="mailto:me@cylenia.dev">E-mail</a>
-      </div>
-    </div>
-  </body>
+        <a href="mailto:me@cylenia.dev">Email</a>
+      </nav>
+    </section>
+  </main>
+</body>
 </html>
