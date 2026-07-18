@@ -64,14 +64,14 @@ body {
   margin: 0 0 1rem;
 }
 
-.social-links {
+.links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
 }
 
-.social-links a {
+.links a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -91,12 +91,12 @@ body {
     opacity 0.15s ease;
 }
 
-.social-links a:hover {
+.links a:hover {
   transform: translateY(-2px);
   opacity: 0.95;
 }
 
-.social-links a:focus-visible {
+.links a:focus-visible {
   outline: 2px solid white;
   outline-offset: 2px;
 }
@@ -112,7 +112,7 @@ body {
     width: 120px;
   }
 
-  .social-links a {
+  .links a {
     width: 100%;
   }
 }
