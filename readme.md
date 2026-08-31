@@ -1,4 +1,4 @@
-# bio
+# website
 
 This is my personal website, made with Vite.\
 \[[clearnet https](https://www.cylenia.dev)\]
